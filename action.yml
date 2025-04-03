@@ -1,0 +1,25 @@
+name: 'SmartPR Labeler: Automatic PR Tagging'
+description: 'Automatically labels PRs based on their title'
+author: 'Your Name'
+
+branding:
+  icon: 'tag'
+  color: 'blue'
+
+inputs:
+  token:
+    description: 'GitHub token'
+    required: true
+    default: ${{ github.token }}
+  config-path:
+    description: 'Path to label configuration file'
+    required: false
+    default: '.github/auto-label-config.yml'
+  default-config:
+    description: 'Use default configuration if no config file is found'
+    required: false
+    default: 'true'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
