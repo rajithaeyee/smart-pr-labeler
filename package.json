@@ -4,8 +4,8 @@
   "description": "GitHub Action to automatically label PRs based on their title",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc && ncc build lib/index.js -o dist",
-    "test": "jest",
+    "build": "tsc -p tsconfig.json && ncc build lib/index.js -o dist",
+    "test": "jest --config jest.config.js",
     "lint": "eslint src/**/*.ts",
     "format": "prettier --write **/*.ts",
     "clean": "rm -rf lib dist"
